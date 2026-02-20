@@ -3,6 +3,8 @@
 # hw2.py
 import random
 import math
+import cmath
+
 
 ##### Template for Homework 2, exercises 2.0 - 2.5  ######
 
@@ -71,26 +73,30 @@ def f2(x):
 # ********** Exercise 2.3 **********
 
 ## 1 - multadd function
-radians = (90.0 / 360.0) * 2 * math.pi
+"""radians = (90.0 / 360.0) * 2 * math.pi
 print(math.sin(radians))
-print (math.cos(radians))
+print (math.cos(radians))"""
 
 ## 2 - Equations
 ##### YOUR CODE HERE #####
-
+"""def multadd(a, b, c):
+    return a * b + c"""
 
 # Test Cases
-# angle_test =
-# print "sin(pi/4) + cos(pi/4)/2 is:"
-# print angle_test
+#angle_test = (math.sin(math.pi/4) + math.cos(math.pi/4)/2)
+"""angle_test = multadd(0.5, math.sin(math.pi/4), math.cos(math.pi/4))
+print("sin(pi/4) + cos(pi/4)/2 is:")
+print(angle_test)
 
-# ceiling_test =
-# print "ceiling(276/19) + 2 log_7(12) is:"
-# print ceiling_test
+#ceiling_test = math.ceil(276/19) + 2 * math.log(12, 7)
+ceiling_test =  multadd(math.log(12, 7), 2, math.ceil(276/19))
+print ("ceiling(276/19) + 2 log_7(12) is:")
+print (ceiling_test)"""
 
 ## 3 - yikes function
-##### YOUR CODE HERE #####
-
+"""def yikes(n):
+    return multadd(n, math.pow(math.e,-n), math.sqrt(1 - math.pow(math.e,-n)))
+print(yikes(5))"""
 
 # Test Cases
 # x = 5
@@ -99,23 +105,45 @@ print (math.cos(radians))
 # ********** Exercise 2.4 **********
 
 ## 1 - rand_divis_3 function
-##### YOUR CODE HERE #####
-
-# Test Cases
-##### YOUR CODE HERE #####
+"""def rand_divis_3():
+   random_int = random.randint(0, 100)
+   print(random_int)
+   is_divisible_by_3 = random_int % 3 == 0
+   return is_divisible_by_3
+print(rand_divis_3())"""
 
 ## 2 - roll_dice function - remember that a die's lowest number is 1;
                             #its highest is the number of sides it has
-##### YOUR CODE HERE #####
+#First number is the number of sides the die has, and the second is the number of dice rolled
+"""def roll_dice(a, b):
+    for b in range(b):
+        dice_roll = random.randint(1, a)
+        print(dice_roll)
+    return "That's all folks!"
 
 # Test Cases
-##### YOUR CODE HERE #####
-
+print(roll_dice(6, 3))"""
 
 # ********** Exercise 2.5 **********
 
 # code for roots function
-##### YOUR CODE HERE #####
+def roots(a, b, c):
+    if a == 0:
+        if b == 0:
+            return "Invalid: a and b cannot be 0"
+        else:
+            # Linear equation
+            return (-c / b,)
+
+    # Calculate the discriminant
+    d = (b**2) - (4 * a * c)
+
+    root1 = (-b - cmath.sqrt(d)) / (2 * a)
+    root2 = (-b + cmath.sqrt(d)) / (2 * a)
+    return (root1, root2)
+
+
+
 
 # Test Cases
 ##### YOUR CODE HERE #####
