@@ -5,15 +5,15 @@
 from math import sqrt
 ##### Template for Homework 1, exercises 1.2-1.5 ######
 
-print ("********** Exercise 1.2 **********")
+"""print ("********** Exercise 1.2 **********")
 
 print("  |  |")
 print("--------")
 print("  |  |")
 print("--------")
-print("  |  |")
+print("  |  |")"""
 
-print ("********** Exercise 1.3 **********")
+"""print ("********** Exercise 1.3 **********")
 
 a = "  |  |"
 b = "--------"
@@ -21,10 +21,10 @@ print(a)
 print(b)
 print(a)
 print(b)
-print(a)
+print(a)"""
 
 
-print ("********** Exercise 1.4 **********")
+"""print ("********** Exercise 1.4 **********")
 print ("********* Part II *************")
 
 c = 3*5/2+3
@@ -36,7 +36,7 @@ print("1.", c)
 print("2.", d)
 print("3.", e)
 print("4.", f)
-print("5.", g)
+print("5.", g)"""
 
 print ("********* Part III *************")
 
