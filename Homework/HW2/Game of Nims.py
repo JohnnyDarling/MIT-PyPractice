@@ -10,9 +10,9 @@ def play_nims(pile, max_stones):
     while new_pile > 0:
         player_1 = 0
         player_2 = 0
-        while player_1 != valid_choice:
-            player_1 = input("P1, how many stones do you take?: ")
-            if player_1 == valid_choice:
+        while player_1 not in valid_choice:
+            player_1 = int(input("P1, how many stones do you take?: "))
+            if player_1 in valid_choice:
                 new_pile -= player_1
                 print(new_pile)
                 break
