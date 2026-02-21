@@ -127,7 +127,7 @@ print(roll_dice(6, 3))"""
 # ********** Exercise 2.5 **********
 
 # code for roots function
-def roots(a, b, c):
+"""def roots(a, b, c):
     if a == 0:
         if b == 0:
             return "Invalid: a and b cannot be 0"
@@ -140,7 +140,7 @@ def roots(a, b, c):
 
     root1 = (-b - cmath.sqrt(d)) / (2 * a)
     root2 = (-b + cmath.sqrt(d)) / (2 * a)
-    return (root1, root2)
+    return (root1, root2)"""
 
 
 
