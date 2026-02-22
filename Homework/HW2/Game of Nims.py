@@ -15,16 +15,28 @@ def play_nims(pile, max_stones):
             if player_1 in valid_choice:
                 new_pile -= player_1
                 print(new_pile)
-                break
+                if new_pile <= 0:
+                    print("Player 1 wins!")
+                    return "GAME OVER"
             else:
                 print("Invalid choice, please try again")
 
+        while player_2 not in valid_choice:
+            player_2 = int(input("P2, how many stones do you take?: "))
+            if player_2 in valid_choice:
+                new_pile -= player_2
+                print(new_pile)
+                if new_pile <= 0:
+                    print("Player 2 wins!")
+                    return "GAME OVER"
+            else:
+                print("Invalid choice, please try again")
+
+print(play_nims(100, 5))
 
 
 
-
-
-    '''
+'''
     An interactive two-person game; also known as Stones.
     @param pile: the number of stones in the pile to start
     @param max_stones: the maximum number of stones you can take on one turn
@@ -40,5 +52,5 @@ def play_nims(pile, max_stones):
 #        while [player 2's answer is not valid]:
 #            [ask player 2]
 #            [execute player 2's move]
-print(play_nims(100, 5))
-print("Game over")
+#print(play_nims(100, 5))
+#print("Game over")
