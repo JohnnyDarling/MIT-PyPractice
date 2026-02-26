@@ -13,9 +13,8 @@
 
 import random
 
-def rpsls():
+def rpsls(user_choice):
     options = ["rock", "paper", "scissors", "lizard", "spock"]
-    user_choice = input("Choose rock, paper, scissors, lizard, spock: ").lower()
 
 # Catch-All Invalid Input
     if user_choice not in options:
@@ -42,4 +41,5 @@ def rpsls():
 # If you didn't win nor tie, then it's a loss
     else:
         return "You lose!"
-print (rpsls())
+
+print (rpsls(user_choice = input("Choose Rock, Paper, Scissors, Lizard, Spock: ").lower()))
