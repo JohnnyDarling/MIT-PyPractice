@@ -24,37 +24,38 @@ print("sum_all of [1, 2, 3, 4] is:", sum_all([1, 2, 3, 4]))"""
     for num in number_list:
         total += num
         res.append(total)
-    print(res)
-
-    # number_list is a list of numbers
-
-    ##### YOUR CODE HERE #####
-    return cumulative_sum(number_list)
+    return res
 
 
-# Test Cases
-##### YOUR CODE HERE #####
-print("sum_all of [4, 3, 6] is:", cumulative_sum([4, 3, 6]))
-print("sum_all of [1, 2, 3, 4] is:", cumulative_sum([1, 2, 3, 4]))"""
+print("cumulative sum of [4, 3, 6] is:", cumulative_sum([4, 3, 6]))
+print("cumulative sum of [1, 2, 3, 4] is:", cumulative_sum([1, 2, 3, 4]))"""
+
+
 # **********  Exercise 2.8 **********
 
-def report_card(class_name, class_grade):
-    num_classes = len(class_name)
+def report_card():
+    num_classes = int(input("Enter number of classes: "))
+    class_name_list = []
+    class_grade_list = []
+    total_gpa = float(0)
+
+    for i in range(num_classes):
+        class_name_list.append(str(input("Enter class name: ")))
+        class_grade_list.append(int(input("Enter class grade: ")))
+
+    for i in range(num_classes):
+        print(class_name_list[i], class_grade_list[i])
+
+    for i in range(num_classes):
+        total_gpa = total_gpa + class_grade_list[i]
 
 
-    for i in num_classes:
-        print(f"class name: {class_name}, -, grade: {class_grade}")
-
-
-
-
-
-##### YOUR CODE HERE #####
-
+    return f"Overall GPA {total_gpa / num_classes}"
 
 # Test Cases
-## In comments, show the output of one run of your function.
-print(report_card(class_name = (str(input("Class Name?"))), class_grade = (int(input("Class Grade?")))))
+print(report_card())
+
+
 # **********  Exercise 2.9 **********
 
 # Write any helper functions you need here.
