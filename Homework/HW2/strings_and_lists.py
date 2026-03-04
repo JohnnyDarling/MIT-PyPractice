@@ -16,6 +16,7 @@
 # Test cases
 print("sum_all of [4, 3, 6] is:", sum_all([4, 3, 6]))
 print("sum_all of [1, 2, 3, 4] is:", sum_all([1, 2, 3, 4]))"""
+#from ctypes.wintypes import PWORD
 
 # I'll come back to this later
 """def cumulative_sum(number_list):
@@ -33,7 +34,7 @@ print("cumulative sum of [1, 2, 3, 4] is:", cumulative_sum([1, 2, 3, 4]))"""
 
 # **********  Exercise 2.8 **********
 
-def report_card():
+"""def report_card():
     num_classes = int(input("Enter number of classes: "))
     class_name_list = []
     class_grade_list = []
@@ -53,7 +54,7 @@ def report_card():
     return f"Overall GPA {total_gpa / num_classes}"
 
 # Test Cases
-print(report_card())
+print(report_card())"""
 
 
 # **********  Exercise 2.9 **********
@@ -62,21 +63,41 @@ print(report_card())
 
 """VOWELS = ['a', 'e', 'i', 'o', 'u']
 
-
 def pig_latin(word):
     # word is a string to convert to pig-latin
 
-    ##### YOUR CODE HERE #####
-    return "Not Implemented Yet"
-"""
+    if not word:
+        return word
+
+    if word[0] in VOWELS:
+        return word + "hay"
+
+    for i, letter in enumerate(word):
+        if letter in VOWELS:
+            return word[i:] + word[:i] + "ay"
+    return word + "ay"
+
 # Test Cases
 ##### YOUR CODE HERE #####
-
+print(pig_latin(input("Enter word: ")))"""
 
 # **********  Exercise 2.10 **********
-# Test Cases
-##### YOUR CODE HERE #####
 
+# Prints a list of the cubes of the numbers 1 through 10
+"""cubes = [x**3 for x in range(1, 11)]
+print(cubes)"""
 
+# Prints out the possible results of two coin flips
+# ex: hh, ht, th, tt
+"""sides = ['Heads', 'Tails']
+outcomes = [(side1, side2) for side1 in sides for side2 in sides]
+print(outcomes)"""
+
+# Takes a string (input) and returns the vowels
+def get_vowels(text):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    return [char for char in text if char.lower() in vowels]
+
+print(get_vowels(input("Enter word: ")))
 # **********  Exercise OPT.1 **********
 # If you do any work for this problem, submit it here
