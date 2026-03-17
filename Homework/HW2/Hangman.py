@@ -133,8 +133,6 @@ assert test3 == 'claptrap', 'test3 was ' + test3
 
 def play_hangman():
     # Actually play the hangman game
-    global secret_word
-    global letters_guessed
     # Put the mistakes_made variable here, since you'll only use it in this function
     mistakes_made = 0
 
@@ -146,18 +144,15 @@ def play_hangman():
     # continually loop:
     while (mistakes_made < MAX_GUESSES):
         print(f"You have {MAX_GUESSES - mistakes_made} guesses left.")
-        global secret_word
-        global letters_guessed
 
         guess = input("Guess a letter: ").lower()[0]
         # Prints n guesses left
-        for i in letters_guessed:
-            if i == guess:
-                print("You already guessed this letter.")
-            else:
-                letters_guessed.append(guess)
+        if guess in letters_guessed:
+            print("You already guessed this letter.")
+        else:
+            letters_guessed.append(guess)
 
-        print(print_guessed(secret_word, guess))
+        print(print_guessed(secret_word, letters_guessed))
     #     check - has letter already been guessed?
     #         If so, what should I do?
     #         If not, what should I do?
