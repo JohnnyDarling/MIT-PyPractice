@@ -81,7 +81,7 @@ def word_guessed(secret_word, letters_guessed):
         for j in letters_guessed:
             if i == j:
                 letters_result.append(True)
-                print(i)
+                # print(i)
 #                print(letters_result)
     letters_result_length = len(letters_result)
 
@@ -106,17 +106,16 @@ def print_guessed(secret_word, letters_guessed):
     '''
     # global secret_word
     # global letters_guessed
-    this_try = []
-    this_try_string = ''
-    ####### YOUR CODE HERE ######
+    output_list = []
+    output_string = ''
     for i in secret_word:
         if i in letters_guessed:
-            this_try.append(i)
+            output_list.append(i)
         else:
-            this_try.append('-')
-    for j in this_try:
-        this_try_string = this_try_string + j
-    return this_try_string
+            output_list.append('-')
+    for j in output_list:
+        output_string = output_string + j
+    return output_string
 
 
 
@@ -136,6 +135,7 @@ def play_hangman():
     # Put the mistakes_made variable here, since you'll only use it in this function
     mistakes_made = 0
 
+
     # Update secret_word. Don't uncomment this line until you get to Step 8.
     # secret_word  = get_word()
 
@@ -143,23 +143,40 @@ def play_hangman():
 
     # continually loop:
     while (mistakes_made < MAX_GUESSES):
+        # Prints n guesses left
         print(f"You have {MAX_GUESSES - mistakes_made} guesses left.")
 
+        # Gets Input Guess
         guess = input("Guess a letter: ").lower()[0]
-        # Prints n guesses left
+
+        # If Guess is wrong
+        if guess not in secret_word:
+            print(f"Sorry, the letter {guess} is not in the word.")
+            mistakes_made += 1
+
+        # If Guess is duplicate
         if guess in letters_guessed:
             print("You already guessed this letter.")
+
+        # If Guess is new
         else:
             letters_guessed.append(guess)
 
         print(print_guessed(secret_word, letters_guessed))
+
+        if word_guessed(secret_word, letters_guessed) == True:
+            print("You win!")
+            break
+
+        if mistakes_made == MAX_GUESSES:
+            print("You ran out of guesses. You lose!")
+            break
     #     check - has letter already been guessed?
     #         If so, what should I do?
     #         If not, what should I do?
     #     check - is letter in word?
     #         If so, what should I do?
     #         If not, what should I do?
-        mistakes_made += 1
 
     return None
 print(play_hangman())
